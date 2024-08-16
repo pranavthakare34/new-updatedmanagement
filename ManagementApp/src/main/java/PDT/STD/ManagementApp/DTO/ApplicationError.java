@@ -3,6 +3,8 @@ package PDT.STD.ManagementApp.DTO;
 import org.springframework.stereotype.Component;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Component
@@ -10,6 +12,7 @@ import jakarta.persistence.Id;
 public class ApplicationError {
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 
 	public int getId() {

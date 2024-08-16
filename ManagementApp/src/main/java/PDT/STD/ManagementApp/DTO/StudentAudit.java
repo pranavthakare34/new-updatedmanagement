@@ -1,5 +1,6 @@
 package PDT.STD.ManagementApp.DTO;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -13,10 +14,10 @@ public class StudentAudit {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL)
 	private Student1 request;
 
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL)
 	private StudentResponse response;
 
 	private String BCID;

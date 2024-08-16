@@ -1,12 +1,16 @@
 package PDT.STD.ManagementApp.DTO;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToOne;
 
 @Entity
 public class StudentResponse {
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	
 	public int getId() {
@@ -19,7 +23,7 @@ public class StudentResponse {
 
 	private String status;
 	
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL)
 	private ApplicationError applicationError;
 
 	public String getStatus() {
